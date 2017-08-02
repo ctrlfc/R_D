@@ -8,3 +8,4 @@ npm-debug.log
 viz/
 coverage/
 package-lock.json
+.idea/
