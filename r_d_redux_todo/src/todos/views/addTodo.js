@@ -8,4 +8,14 @@ class AddTodo extends Component{
         super(props,context);
         
     }
+
+
+    onsubmit(ev) {
+        ev.prevenDefault();
+
+        const inputValue = this.state.value;
+        if (!inputValue.trim()) {
+            return;
+        }
+    }
 }
