@@ -1,52 +1,51 @@
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import TodoItem from './todoItem.js';
-import { toggleTodo, removeTodo } from '../action.js';
-import { FileterTypes } from '../../constants.js';
-import { FilterTypes } from '../../constants';
+import React, { PropTypes } from "react";
+import { connect } from "react-redux";
+import TodoItem from "./todoItem.js";
+import { toggleTodo, removeTodo } from "../action.js";
+import { FileterTypes } from "../../constants.js";
+import { FilterTypes } from "../../constants";
 
 const TodoList = ({ todos, onToggleTodo, onRemoveTodo }) => {
-    return (
-        <ul className="todo-list">
-            {
-                todo.map((item) => (
-                    <TodoItem
-                        key={item.id}
-                        text={item.text}
-                        completed={item.completed}
-                        onToggle={() => onToggleTodo(item.id)}
-                        onRemove={() => onRemoveTodo(item.id)}
-                    />
-                ))
-            }
-        </ul>
-    );
+  return (
+    // 不能使用for或者while(语句)
+    <ul className="todo-list">
+      {todo.map(item =>
+        <TodoItem
+          key={item.id}
+          text={item.text}
+          completed={item.completed}
+          onToggle={() => onToggleTodo(item.id)}
+          onRemove={() => onRemoveTodo(item.id)}
+        />
+      )}
+    </ul>
+  );
 };
 
 TodoList.propTypes = {
-    todos:PropTypes.array.isRequired
+  todos: PropTypes.array.isRequired
 };
 
 const selectVisibleTodos = (todos, filter) => {
-    switch (filter) {
-        case FilterTypes.ALL:
-            return todos;
-        case FilterTypes.COMPLETED:
-            return todos.filter(item => item.completed);
-        case FilterTypes.UNCOMPLETED:
-            return todos.filter(item => !item.completed);
-        default:
-            throw new Error('unsupported filter');
-    }
-} 
+  switch (filter) {
+    case FilterTypes.ALL:
+      return todos;
+    case FilterTypes.COMPLETED:
+      return todos.filter(item => item.completed);
+    case FilterTypes.UNCOMPLETED:
+      return todos.filter(item => !item.completed);
+    default:
+      throw new Error("unsupported filter");
+  }
+};
 
-const mapStateToProps = (state) => {
-    return {
-        todos: selectVisibleTodos(state.todos, state.filter)
-    };
-}
+const mapStateToProps = state => {
+  return {
+    todos: selectVisibleTodos(state.todos, state.filter)
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
+/* const mapDispatchToProps = (dispatch) => {
     return {
         onToggleTodo: (id) => {
             dispatch(toggleTodo(id));
@@ -55,5 +54,12 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(removeTodo(id));
         }
     };
+}; */
+
+//直接是一个映射
+const mapDispatchToProps = {
+  onToggleTodo: toggleTodo,
+  onRemoveTodo: removeTodo
 };
 
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
