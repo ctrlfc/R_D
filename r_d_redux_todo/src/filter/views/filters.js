@@ -1,10 +1,3 @@
-/*
- * @Author: king 
- * @Date: 2017-08-04 01:47:06 
- * @Last Modified by: king
- * @Last Modified time: 2017-08-04 01:55:50
- */
-
 import React from "react";
 import Link from "./link";
 import { FilterTypes } from "../../constants";

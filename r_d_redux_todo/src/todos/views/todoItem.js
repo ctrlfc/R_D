@@ -1,9 +1,3 @@
-/*
- * @Author: king 
- * @Date: 2017-08-04 00:46:35 
- * @Last Modified by: king
- * @Last Modified time: 2017-08-04 01:11:20
- */
 
 import React, { PropTypes } from "react";
 

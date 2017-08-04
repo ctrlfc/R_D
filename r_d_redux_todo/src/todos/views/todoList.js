@@ -21,7 +21,7 @@ const TodoList = ({ todos, onToggleTodo, onRemoveTodo }) => {
     </ul>
   );
 };
-
+			
 TodoList.propTypes = {
   todos: PropTypes.array.isRequired
 };
