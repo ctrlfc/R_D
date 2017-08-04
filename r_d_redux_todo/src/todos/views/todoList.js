@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import TodoItem from "./todoItem.js";
 import { toggleTodo, removeTodo } from "../action.js";
 import { FileterTypes } from "../../constants.js";
-import { FilterTypes } from "../../constants";
+import { FilterTypes } from "../../constants.js";
 
 const TodoList = ({ todos, onToggleTodo, onRemoveTodo }) => {
   return (

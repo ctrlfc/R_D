@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { setFilter } from "../action";
+import { setFilter } from "../action.js";
 
 const Link = ({ active, children, onClick }) => {
   if (active) {

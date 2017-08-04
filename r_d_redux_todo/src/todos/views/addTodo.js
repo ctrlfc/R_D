@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 
-import {addTodo} from "../action";
+import {addTodo} from "../action.js";
 
 class AddTodo extends Component{
     constructor(props,context){
