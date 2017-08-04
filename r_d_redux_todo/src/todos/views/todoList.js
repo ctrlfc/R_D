@@ -1,4 +1,5 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TodoItem from "./todoItem.js";
 import { toggleTodo, removeTodo } from "../action.js";
