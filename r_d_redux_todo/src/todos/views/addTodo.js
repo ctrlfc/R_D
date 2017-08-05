@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 
 import {addTodo} from "../action.js";
 
-class AddTodo extends Component{
-    constructor(props,context){
+class AddTodo extends Component {
+    constructor(props, context) {
         super(props, context);
-        
+
         this.onSubmit = this.onSubmit.bind(this);
         this.onInputChange = this.onInputChange.bind(this);
 
@@ -18,16 +18,15 @@ class AddTodo extends Component{
 
     onSubmit(ev) {
         //取消默认提交行为
-        ev.prevenDefault();
-
+        ev.preventDefault();
+        debugger;
         const inputValue = this.state.value;
         //清空格
         if (!inputValue.trim()) {
             return;
         }
-
         this.props.onAdd(inputValue);
-        this.setState({ value:''});
+        this.setState({value: ''});
     }
 
     onInputChange(event) {
@@ -41,8 +40,10 @@ class AddTodo extends Component{
         return (
             <div className="add-todo">
                 <from onSubmit={this.onSubmit}>
-                    <input className="new-todo" onChange={this.onInputChange
-                    } value={this.state.value} />
+                    <input className="new-todo"
+                           onChange={this.onInputChange}
+                           value={this.state.value}
+                    />
                     <button className="add-btn" type="submit">添加</button>
                 </from>
             </div>

@@ -1,8 +1,8 @@
 //多个reducer组合
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 
-import { reducer as todoReducer } from "./todos/";
-import { reducer as filterReducer } from "./filter/";
+import { reducer as todoReducer } from "./todos";
+import { reducer as filterReducer } from "./filter";
 
 import Perf from "react-addons-perf";
 
@@ -17,8 +17,8 @@ const reducer = combineReducers({
 });
 
 const middlewares = [];
-if (process.env.NODE_ENV !== "prpduction") {
-  middlewares.push(require("redux-immutable-state-invariant")());
+if (process.env.NODE_ENV !== 'production') {
+  middlewares.push(require('redux-immutable-state-invariant')());
 }
 
 const storeEnhancers = compose(

@@ -4,7 +4,7 @@ import { FilterTypes } from "../../constants.js";
 
 import "./style.css";
 
-const Filter = () => {
+const Filters = () => {
   return (
     <p className="filters">
       <Link filter={FilterTypes.ALL}>
