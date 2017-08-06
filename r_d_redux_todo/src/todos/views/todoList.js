@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
 import TodoItem from "./todoItem.js";
-import {toggleTodo, removeTodo} from "../action.js";
+import {toggleTodo, removeTodo} from "../actions.js";
 import {FilterTypes} from "../../constants.js";
 
 const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
@@ -39,7 +40,7 @@ const selectVisibleTodos = (todos, filter) => {
     }
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         todos: selectVisibleTodos(state.todos, state.filter)
     };
@@ -57,9 +58,9 @@ const mapStateToProps = state => {
 }; */
 
 //直接是一个映射
-const mapDispatchToProps = {
+const mapDispatchToProps = (dispatch) => bindActionCreators({
     onToggleTodo: toggleTodo,
     onRemoveTodo: removeTodo
-};
+}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

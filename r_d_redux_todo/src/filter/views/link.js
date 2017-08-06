@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {setFilter} from "../action.js";
+import {setFilter} from "../actions.js";
 
 const Link = ({active, children, onClick}) => {
     if (active) {
@@ -13,7 +13,7 @@ const Link = ({active, children, onClick}) => {
     } else {
         return (
             <a
-                // href=""
+                href=""
                 className="filter not-selected"
                 onClick={(ev) => {
                     ev.preventDefault();
