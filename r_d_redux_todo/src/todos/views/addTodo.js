@@ -9,7 +9,6 @@ class AddTodo extends Component {
         super(props, context);
 
         this.onSubmit = this.onSubmit.bind(this);
-        // this.onSubmit = this.onSubmit.bind(this);
         this.onInputChange = this.onInputChange.bind(this);
 
         this.state = {
@@ -37,7 +36,7 @@ class AddTodo extends Component {
         });
     }
 
-    //运用了ref
+    //并没有运用ref,使用的是状态绑定
 
     render() {
         return (
