@@ -44,7 +44,6 @@ class AddTodo extends Component {
                 <form onSubmit={this.onSubmit}>
                     <input className="new-todo" onChange={this.onInputChange}
                            value={this.state.value}/>
-                    <button className="add-btn" type="submit">添加</button>
                 </form>
             </div>
         )

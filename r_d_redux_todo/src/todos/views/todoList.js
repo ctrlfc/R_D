@@ -9,17 +9,19 @@ import {FilterTypes} from "../../constants.js";
 const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
     return (
         // 不能使用for或者while(语句)
-        <ul className="todo-list">
-            {todos.map(item =>
-                <TodoItem
-                    key={item.id}
-                    text={item.text}
-                    completed={item.completed}
-                    onToggle={() => onToggleTodo(item.id)}
-                    onRemove={() => onRemoveTodo(item.id)}
-                />
-            )}
-        </ul>
+        <section className="main">
+            <ul className="todo-list">
+                {todos.map(item =>
+                    <TodoItem
+                        key={item.id}
+                        text={item.text}
+                        completed={item.completed}
+                        onToggle={() => onToggleTodo(item.id)}
+                        onRemove={() => onRemoveTodo(item.id)}
+                    />
+                )}
+            </ul>
+        </section>
     );
 };
 

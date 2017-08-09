@@ -11,7 +11,7 @@ const TodoItem = ({onToggle, onRemove, completed, text}) => {
             }}
         >
             <input
-                className="toggle"
+                className="view"
                 type="checkbox"
                 {...checkedProp}
                 readOnly
@@ -20,8 +20,7 @@ const TodoItem = ({onToggle, onRemove, completed, text}) => {
             <label className="text">
                 {text}
             </label>
-            <button className="remove" onClick={onRemove}>
-                x
+            <button className="destroy" onClick={onRemove}>
             </button>
         </li>
     );

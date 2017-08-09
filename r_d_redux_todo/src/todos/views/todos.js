@@ -2,13 +2,18 @@ import React from "react";
 import AddTodo from "./addTodo.js";
 import TodoList from "./todoList.js";
 
-import './style.css';
+// import './style.css';
 
 export default () => {
+
     return (
-        <div className="todos">
-            <AddTodo/>
+        <header className="header">
+            <h1>todos</h1>
+            <AddTodo
+                newTodo
+                placeholder="What needs to be done?"
+            />
             <TodoList/>
-        </div>
+        </header>
     )
 }

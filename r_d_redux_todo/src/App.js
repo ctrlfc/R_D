@@ -7,7 +7,7 @@ import { view as Filter } from './filter/';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="todoapp">
         <Todos />
         <Filter />
       </div>
