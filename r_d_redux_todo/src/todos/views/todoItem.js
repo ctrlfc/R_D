@@ -10,19 +10,22 @@ const TodoItem = ({onToggle, onRemove, completed, text}) => {
                 textDecoration: completed ? "line-through" : "none"
             }}
         >
-            <input
-                className="view"
-                type="checkbox"
-                {...checkedProp}
-                readOnly
-                onClick={onToggle}
-            />
-            <label className="text">
-                {text}
-            </label>
-            <button className="destroy" onClick={onRemove}>
-            </button>
+            <div className="view">
+                <input
+                    className="toggle"
+                    type="checkbox"
+                    {...checkedProp}
+                    readOnly
+                    onClick={onToggle}
+                />
+                <label className="text">
+                    {text}
+                </label>
+                <button className="destroy" onClick={onRemove}>
+                </button>
+            </div>
         </li>
+
     );
 };
 

@@ -9,10 +9,7 @@ export default () => {
     return (
         <header className="header">
             <h1>todos</h1>
-            <AddTodo
-                newTodo
-                placeholder="What needs to be done?"
-            />
+            <AddTodo/>
             <TodoList/>
         </header>
     )

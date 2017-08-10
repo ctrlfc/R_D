@@ -42,8 +42,11 @@ class AddTodo extends Component {
         return (
             <div className="add-todo">
                 <form onSubmit={this.onSubmit}>
-                    <input className="new-todo" onChange={this.onInputChange}
-                           value={this.state.value}/>
+                    <input className="new-todo"
+                           onChange={this.onInputChange}
+                           value={this.state.value}
+                           placeholder="需要做什么?"
+                    />
                 </form>
             </div>
         )

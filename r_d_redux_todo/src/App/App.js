@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { view as Todos } from './todos/';
-import { view as Filter } from './filter/';
+import { view as Todos } from '../todos/index';
+import { view as Filter } from '../filter/index';
 
 // import './App.css';
 

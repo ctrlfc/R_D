@@ -6,7 +6,7 @@ import {setFilter} from "../actions.js";
 const Link = ({active, children, onClick}) => {
     if (active) {
         return (
-            <b className="filter selected">
+            <b className="selectedFilter">
                 {children}
             </b>
         );
@@ -14,7 +14,7 @@ const Link = ({active, children, onClick}) => {
         return (
             <a
                 href=""
-                className="filter not-selected"
+                className="filter"
                 onClick={(ev) => {
                     ev.preventDefault();
                     onClick();
