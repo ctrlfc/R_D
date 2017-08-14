@@ -5,7 +5,7 @@ import {FilterTypes} from "../../constants/constants.js";
 // import "./style.css";
 
 
-const renderTodoCount = () => {
+/*const renderTodoCount = () => {
     const {activeCount} = this.props;
     const itemWord = activeCount === 1 ? "item" : "items";
 
@@ -14,9 +14,9 @@ const renderTodoCount = () => {
         <strong>{activeCount || "No"}</strong> {itemWord} left
       </span>
     );
-};
+};*/
 
-const renderClearButton = () => {
+/*const renderClearButton = () => {
     const {completedCount, onClearCompleted} = this.props;
     if (completedCount > 0) {
         return (
@@ -25,7 +25,7 @@ const renderClearButton = () => {
             </button>
         );
     }
-};
+};*/
 
 const Filters = () => {
     return (
